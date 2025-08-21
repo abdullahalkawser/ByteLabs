@@ -27,7 +27,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent animate-pulse">
+            <div className="text-3xl font-bold bg-gradient-to-r  from-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
               ByteLabs
             </div>
           </div>

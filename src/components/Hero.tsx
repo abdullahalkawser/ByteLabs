@@ -76,7 +76,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gray-900/90 z-10"></div>
 
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 md:px-0 space-y-6 max-w-4xl mx-auto py-20">
-<h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+<h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-lime-400">
   ByteLabs Tech Solutions
 </h1>
 <p className="text-xl md:text-3xl text-gray-300 mt-4">
@@ -107,6 +107,25 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
+<div className="mt-16 w-full flex justify-between gap-4 px-4 md:px-0">
+  {[
+    { title: "Machine Learning", desc: "Smart predictive models", color: "from-blue-400 to-cyan-400" },
+    { title: "Computer Vision", desc: "Image & video recognition", color: "from-purple-400 to-pink-400" },
+    { title: "Natural Language", desc: "Text & speech AI", color: "from-green-400 to-lime-400" },
+    { title: "Robotics", desc: "Automated physical tasks", color: "from-yellow-400 to-orange-400" },
+    { title: "Data Analytics", desc: "Insights from data", color: "from-pink-400 to-red-400" },
+    { title: "AI Automation", desc: "Streamlined processes", color: "from-cyan-400 to-blue-400" },
+  ].map((box, idx) => (
+    <div
+      key={idx}
+      className={`flex flex-col items-center justify-center p-4 flex-1 h-36 rounded-2xl bg-gradient-to-r ${box.color} text-white shadow-lg hover:scale-105 transition-transform duration-300`}
+    >
+      <h3 className="font-bold text-lg text-center">{box.title}</h3>
+      <p className="text-sm text-center mt-1">{box.desc}</p>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );
