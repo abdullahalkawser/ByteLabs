@@ -17,13 +17,14 @@ function App() {
     <div className="min-h-screen ">
       <Header />
       <Hero />
-      <Team/>
+
       <About />
       <Services />
       <AIShowcase />
       <Portfolio />
 
       <Pricing />
+         <Team/>
       <Testimonials />
       <Contact />
       <Footer />
