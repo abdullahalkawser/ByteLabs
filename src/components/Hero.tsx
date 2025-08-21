@@ -75,10 +75,11 @@ const HeroSection = () => {
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
       <div className="absolute inset-0 bg-gray-900/90 z-10"></div>
 
-      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 md:px-0 space-y-6 max-w-4xl mx-auto py-20">
-<h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-lime-400">
+      <div className="relative z-30 flex flex-col items-center justify-center text-center px-4 md:px-0 space-y-6 max-w-4xl mx-auto py-20">
+<h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-lime-200">
   ByteLabs Tech Solutions
 </h1>
+
 <p className="text-xl md:text-3xl text-gray-300 mt-4">
   Driving Innovation Through Smart Software & AI
 </p>
