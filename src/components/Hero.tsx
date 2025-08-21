@@ -13,45 +13,62 @@ const HeroSection = () => {
     let width = (canvas.width = canvas.offsetWidth);
     let height = (canvas.height = canvas.offsetHeight);
 
-    const particles: any[] = Array.from({ length: 50 }, () => ({
+    const particles: any[] = Array.from({ length: 60 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       radius: 2 + Math.random() * 3,
-      dx: (Math.random() - 0.5) * 0.3,
-      dy: (Math.random() - 0.5) * 0.3,
+      dx: (Math.random() - 0.5) * 0.5,
+      dy: (Math.random() - 0.5) * 0.5,
       color: `hsl(${Math.random() * 360}, 80%, 60%)`,
     }));
 
-    // Mouse move
     const handleMouseMove = (e: MouseEvent) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
     };
     window.addEventListener("mousemove", handleMouseMove);
 
+    const connectParticles = () => {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(255,255,255,${1 - dist / 120})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+            ctx.closePath();
+          }
+        }
+      }
+    };
+
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
 
       particles.forEach((p) => {
-        // Parallax effect
-        const distX = (mouse.current.x - width / 2) * 0.02;
-        const distY = (mouse.current.y - height / 2) * 0.02;
+        const distX = (mouse.current.x - width / 2) * 0.002;
+        const distY = (mouse.current.y - height / 2) * 0.002;
 
-        p.x += p.dx + distX * 0.05;
-        p.y += p.dy + distY * 0.05;
+        p.x += p.dx + distX;
+        p.y += p.dy + distY;
 
-        // Bounce
         if (p.x < 0 || p.x > width) p.dx *= -1;
         if (p.y < 0 || p.y > height) p.dy *= -1;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.shadowColor = p.color;
-        ctx.shadowBlur = 12;
+        ctx.shadowBlur = width < 768 ? 6 : 15;
         ctx.fill();
       });
+
+      connectParticles();
 
       requestAnimationFrame(animate);
     };
@@ -61,6 +78,10 @@ const HeroSection = () => {
     const handleResize = () => {
       width = canvas.width = canvas.offsetWidth;
       height = canvas.height = canvas.offsetHeight;
+      particles.forEach((p) => {
+        p.x = Math.random() * width;
+        p.y = Math.random() * height;
+      });
     };
     window.addEventListener("resize", handleResize);
 
@@ -71,25 +92,23 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen bg-gray-900 overflow-hidden flex items-center justify-center">
+    <section className="relative w-full h-screen bg-gray-900 overflow-hidden flex items-center justify-center">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
-      <div className="absolute inset-0 bg-gray-900/90 z-10"></div>
+      <div className="absolute inset-0 bg-gray-900/80 z-10"></div>
 
-      <div className="relative z-30 flex flex-col items-center justify-center text-center px-4 md:px-0 space-y-6 max-w-4xl mx-auto py-20">
-<h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-lime-200">
-  ByteLabs Tech Solutions
-</h1>
+      <div className="relative z-30 flex flex-col items-center justify-center text-center px-4 md:px-0 space-y-6 max-w-5xl mx-auto py-24">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-lime-200 drop-shadow-lg">
+          ByteLabs Tech Solutions
+        </h1>
+        <p className="text-lg sm:text-xl md:text-3xl text-gray-300 mt-4">
+          Driving Innovation Through Smart Software & AI
+        </p>
+        <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-3xl mt-2 leading-relaxed">
+          We build cutting-edge software solutions that empower businesses worldwide. AI-driven analytics, custom web & mobile applications — scalable, secure, and innovative technology for your growth.
+        </p>
 
-<p className="text-xl md:text-3xl text-gray-300 mt-4">
-  Driving Innovation Through Smart Software & AI
-</p>
-<p className="text-gray-400 text-base md:text-lg max-w-2xl mt-2 leading-relaxed">
-  We build cutting-edge software solutions that empower businesses worldwide. AI-driven analytics, custom web & mobile applications — scalable, secure, and innovative technology for your growth.
-</p>
-
-
-
-        <div className="mt-12 w-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24 text-white">
+        {/* Stats */}
+        <div className="mt-12 w-full flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 md:gap-24 text-white">
           {[
             { value: "150+", label: "Projects", info: "Innovative Solutions", color: "text-cyan-400" },
             { value: "75+", label: "Clients", info: "Global Trust", color: "text-purple-400" },
@@ -100,7 +119,7 @@ const HeroSection = () => {
               key={idx}
               className="flex flex-col items-center transform hover:scale-110 transition duration-500"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold ${stat.color} drop-shadow-[0_0_10px]`}>
+              <h2 className={`text-3xl md:text-4xl font-bold ${stat.color} drop-shadow-[0_0_15px]`}>
                 {stat.value}
               </h2>
               <p className="text-gray-300 mt-1">{stat.label}</p>
@@ -108,25 +127,26 @@ const HeroSection = () => {
             </div>
           ))}
         </div>
-<div className="mt-16 w-full flex justify-between gap-4 px-4 md:px-0">
-  {[
-    { title: "Machine Learning", desc: "Smart predictive models", color: "from-blue-400 to-cyan-400" },
-    { title: "Computer Vision", desc: "Image & video recognition", color: "from-purple-400 to-pink-400" },
-    { title: "Natural Language", desc: "Text & speech AI", color: "from-green-400 to-lime-400" },
-    { title: "Robotics", desc: "Automated physical tasks", color: "from-yellow-400 to-orange-400" },
-    { title: "Data Analytics", desc: "Insights from data", color: "from-pink-400 to-red-400" },
-    { title: "AI Automation", desc: "Streamlined processes", color: "from-cyan-400 to-blue-400" },
-  ].map((box, idx) => (
-    <div
-      key={idx}
-      className={`flex flex-col items-center justify-center p-4 flex-1 h-36 rounded-2xl bg-gradient-to-r ${box.color} text-white shadow-lg hover:scale-105 transition-transform duration-300`}
-    >
-      <h3 className="font-bold text-lg text-center">{box.title}</h3>
-      <p className="text-sm text-center mt-1">{box.desc}</p>
-    </div>
-  ))}
-</div>
 
+        {/* AI Boxes */}
+        <div className="mt-16 w-full flex flex-wrap justify-center gap-4 px-4 md:px-0">
+          {[
+            { title: "Machine Learning", desc: "Smart predictive models", color: "from-blue-400 to-cyan-400" },
+            { title: "Computer Vision", desc: "Image & video recognition", color: "from-purple-400 to-pink-400" },
+            { title: "Natural Language", desc: "Text & speech AI", color: "from-green-400 to-lime-400" },
+            { title: "Robotics", desc: "Automated physical tasks", color: "from-yellow-400 to-orange-400" },
+            { title: "Data Analytics", desc: "Insights from data", color: "from-pink-400 to-red-400" },
+            { title: "AI Automation", desc: "Streamlined processes", color: "from-cyan-400 to-blue-400" },
+          ].map((box, idx) => (
+            <div
+              key={idx}
+              className={`flex flex-col items-center justify-center p-4 flex-1 min-w-[140px] h-36 rounded-3xl bg-gradient-to-r ${box.color} text-white shadow-2xl hover:scale-105 transition-transform duration-300`}
+            >
+              <h3 className="font-bold text-lg text-center">{box.title}</h3>
+              <p className="text-sm text-center mt-1">{box.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
