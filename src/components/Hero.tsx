@@ -10,15 +10,15 @@ const HeroSection = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
+    let width = canvas.parentElement?.offsetWidth || window.innerWidth;
+    let height = canvas.parentElement?.offsetHeight || window.innerHeight;
 
     const particles: any[] = Array.from({ length: 60 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: 2 + Math.random() * 3,
-      dx: (Math.random() - 0.5) * 0.5,
-      dy: (Math.random() - 0.5) * 0.5,
+      radius: 2 + Math.random() * 4,
+      dx: (Math.random() - 0.5) * 1,
+      dy: (Math.random() - 0.5) * 1,
       color: `hsl(${Math.random() * 360}, 80%, 60%)`,
     }));
 
@@ -64,20 +64,21 @@ const HeroSection = () => {
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.shadowColor = p.color;
-        ctx.shadowBlur = width < 768 ? 6 : 15;
+        ctx.shadowBlur = Math.min(width / 100, 20);
         ctx.fill();
       });
 
       connectParticles();
-
       requestAnimationFrame(animate);
     };
 
     animate();
 
     const handleResize = () => {
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
+      width = canvas.parentElement?.offsetWidth || window.innerWidth;
+      height = canvas.parentElement?.offsetHeight || window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
       particles.forEach((p) => {
         p.x = Math.random() * width;
         p.y = Math.random() * height;
@@ -92,11 +93,14 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen bg-gray-900 overflow-hidden flex items-center justify-center">
+    <section className="relative w-full min-h-screen bg-gray-900 overflow-hidden flex items-center justify-center">
+      {/* Canvas Layer */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
-      <div className="absolute inset-0 bg-gray-900/80 z-10"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gray-900/60 z-10"></div>
 
-      <div className="relative z-30 flex flex-col items-center justify-center text-center px-4 md:px-0 space-y-6 max-w-5xl mx-auto py-24">
+      {/* Content */}
+      <div className="relative z-30 flex flex-col items-center justify-center text-center px-6 md:px-0 space-y-6 max-w-6xl mx-auto py-32">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-lime-200 drop-shadow-lg">
           ByteLabs Tech Solutions
         </h1>
@@ -115,10 +119,7 @@ const HeroSection = () => {
             { value: "20+", label: "Countries", info: "Worldwide Reach", color: "text-pink-400" },
             { value: "10+", label: "Years", info: "Expertise", color: "text-green-400" },
           ].map((stat, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center transform hover:scale-110 transition duration-500"
-            >
+            <div key={idx} className="flex flex-col items-center transform hover:scale-110 transition duration-500">
               <h2 className={`text-3xl md:text-4xl font-bold ${stat.color} drop-shadow-[0_0_15px]`}>
                 {stat.value}
               </h2>
