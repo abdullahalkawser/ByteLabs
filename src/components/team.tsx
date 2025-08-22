@@ -3,7 +3,7 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 import Particles from 'react-tsparticles';
 
 const teamMembers = [
-  { name: 'Alice', role: 'CEO', image: 'https://randomuser.me/api/portraits/women/1.jpg' },
+  { name: 'Abdullah', role: 'Founder', image: 'https://ik.imagekit.io/kiehp5ayu/493918777_1249827663230269_812639154031349223_n-fotor-bg-remover-20250822222549.-fotor-enhance-20250822222800.jpg?updatedAt=1755880220944' },
   { name: 'Bob', role: 'CTO', image: 'https://randomuser.me/api/portraits/men/1.jpg' },
   { name: 'Charlie', role: 'Lead Developer', image: 'https://randomuser.me/api/portraits/men/2.jpg' },
   { name: 'Diana', role: 'UI/UX Designer', image: 'https://randomuser.me/api/portraits/women/2.jpg' },
