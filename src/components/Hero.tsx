@@ -132,11 +132,11 @@ const HeroSection = () => {
         {/* AI Boxes */}
         <div className="mt-16 w-full flex flex-wrap justify-center gap-4 px-4 md:px-0">
           {[
-            { title: "Machine Learning", desc: "Smart predictive models", color: "from-blue-400 to-cyan-400" },
+            { title: "Machine Learning", desc: "Smart predictive models and api", color: "from-blue-400 to-cyan-400" },
             { title: "Computer Vision", desc: "Image & video recognition", color: "from-purple-400 to-pink-400" },
             { title: "Natural Language", desc: "Text & speech AI", color: "from-green-400 to-lime-400" },
             { title: "Robotics", desc: "Automated physical tasks", color: "from-yellow-400 to-orange-400" },
-            { title: "Data Analytics", desc: "Insights from data", color: "from-pink-400 to-red-400" },
+            { title: "Data Analytics", desc: "Insights from data and Data sets", color: "from-pink-400 to-red-400" },
             { title: "AI Automation", desc: "Streamlined processes", color: "from-cyan-400 to-blue-400" },
           ].map((box, idx) => (
             <div
