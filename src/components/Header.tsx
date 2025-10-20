@@ -28,7 +28,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="text-3xl font-bold bg-gradient-to-r  from-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
-              ByteLabs
+              ByteLabsAI
             </div>
           </div>
 
