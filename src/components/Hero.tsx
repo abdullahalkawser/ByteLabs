@@ -102,7 +102,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-30 flex flex-col items-center justify-center text-center px-6 md:px-0 space-y-6 max-w-6xl mx-auto py-32">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-lime-200 drop-shadow-lg">
-          ByteLabs Tech Solutions
+          ByteLabsAi Tech Solutions
         </h1>
         <p className="text-lg sm:text-xl md:text-3xl text-gray-300 mt-4">
           Driving Innovation Through Smart Software & AI
