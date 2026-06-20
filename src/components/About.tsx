@@ -204,6 +204,7 @@ const About = () => {
    
           </div>
 
+
           {/* Right: Interactive Image Container */}
           <div className="relative animate-fade-in-right flex justify-center lg:justify-end">
             <div className="relative group max-w-md lg:max-w-full">

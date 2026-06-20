@@ -105,6 +105,7 @@ const MainContactAndAnalyticsConsole = () => {
       setMessages((prev) => [...prev, { id: `sys-${Date.now()}`, sender: 'system', text: botResponse, time: systemTime }]);
     }, 1300);
   };
+  
 
   return (
     <section id="contact" className="py-20 bg-slate-950 text-slate-100 relative overflow-hidden font-sans selection:bg-purple-500/30text-white overflow-hidden relative min-h-screen flex items-center">
