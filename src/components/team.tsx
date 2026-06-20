@@ -5,35 +5,36 @@ const teamMembers = [
   {
     name: 'Sarah Rahman',
     role: 'Co-Founder & CEO',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop',
-    education: 'MBA, Stanford University',
+    image: 'https://photosfinite.com/wp-content/uploads/2025/03/Girl-in-Hijab.webp',
+    education: 'BSE in CSE, University of science and technology',
     bio: 'Leading our strategic vision and driving global growth with a passion for scalable tech innovations.',
     skills: ['Leadership', 'Strategy', 'Venture Capital'],
     socials: { linkedin: '#', twitter: '#' }
   },
   {
-    name: 'Abdullah',
+    name: 'Abdullah ALKawser',
     role: 'Founder',
     image: 'https://i.ibb.co/HvYxTvP/Chat-GPT-Image-Jun-21-2026-02-55-14-AM.png',
-    education: 'B.Sc in CSE, BUET',
+    education: 'B.Sc in CSE, Bangladesh university of business and technology',
     bio: 'The visionary mind behind the platform, architecting the core infrastructure and future roadmaps.',
     skills: ['Architecture', 'Product Management', 'R&D'],
     socials: { linkedin: '#', github: '#' }
   },
   {
-    name: 'Bob',
-    role: 'CTO',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop',
-    education: 'M.Sc in Software Engineering, MIT',
+    name: 'Jannatul Ferdous',
+
+    role: 'Part-time software engineer',
+    image: 'https://img.magnific.com/free-photo/cartoon-man-wearing-glasses_23-2151136784.jpg?semt=ais_hybrid&w=740&q=80',
+    education: 'B.Sc in Computer Science and Engineering, Bangladesh army university of science and technology',
     bio: 'Overseeing technical architecture and ensuring high scalability, security, and fast deployment.',
     skills: ['Cloud Computing', 'Cybersecurity', 'DevOps'],
     socials: { linkedin: '#', github: '#' }
   },
   {
-    name: 'Charlie',
-    role: 'Lead Developer',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop',
-    education: 'B.Sc in Software Engineering, DU',
+    name: 'Ashikur Rahman ',
+    role: ' Part-time Full Stack Developer',
+    image: 'https://images.stockcake.com/public/0/4/f/04f6eb18-f4c8-4f11-a4e1-5aaf59c86c7a_large/coding-anime-hero-stockcake.jpg',
+    education: 'B.Sc in CSE, Rajshahi university of engineering and technology',
     bio: 'Transforming complex designs into high-performance web solutions with clean and maintainable code.',
     skills: ['React / Next.js', 'Node.js', 'GraphQL'],
     socials: { twitter: '#', github: '#' }
