@@ -134,7 +134,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden text-white bg-[#03050a] border-t border-gray-900/60 font-sans">
+    <footer className="relative overflow-hidden text-white bg-slate-950 text-slate-100 relative overflow-hidden font-sans selection:bg-purple-500/30 border-t border-gray-900/60 font-sans">
       {/* Interactive Canvas Grid */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full -z-10 pointer-events-auto" />
 

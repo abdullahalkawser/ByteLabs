@@ -19,12 +19,13 @@ function App() {
       <Hero />
 
       <About />
+         <Team/>
       <Services />
       <AIShowcase />
       <Portfolio />
 
       <Pricing />
-         <Team/>
+    
       <Testimonials />
       <Contact />
       <Footer />

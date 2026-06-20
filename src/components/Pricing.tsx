@@ -65,7 +65,7 @@ const Pricing = () => {
     <section id="pricing" className="py-32 bg-slate-950 text-slate-100 relative overflow-hidden font-sans selection:bg-purple-500/30">
       
       {/* ব্যাকগ্রাউন্ড সাইপার গ্রিড এবং গ্লো অরবস */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_90%,transparent_100%)] opacity-70" />
+      <div className="absolute inset-0 " />
       
       <div className="absolute w-[500px] h-[500px] bg-gradient-to-r from-purple-600/10 to-blue-500/10 rounded-full blur-[130px] pointer-events-none top-[-10%] left-[5%]" />
       <div className="absolute w-[600px] h-[600px] bg-gradient-to-r from-blue-500/10 to-pink-500/10 rounded-full blur-[150px] pointer-events-none top-[20%] right-[-10%]" />

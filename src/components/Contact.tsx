@@ -107,7 +107,7 @@ const MainContactAndAnalyticsConsole = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#05070f] text-white overflow-hidden relative min-h-screen flex items-center">
+    <section id="contact" className="py-20 bg-slate-950 text-slate-100 relative overflow-hidden font-sans selection:bg-purple-500/30text-white overflow-hidden relative min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 space-y-12">
         
         {/* --- ১. রিয়েল-টাইম লাইভ সিস্টেম স্ট্যাটাস প্যানেল --- */}

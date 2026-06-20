@@ -272,10 +272,10 @@ const About = () => {
                 </p>
                 <div className="pt-2">
                   <span className="block font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 text-base sm:text-lg">
-                    Dr. Alex Thorne
+                   Abdullah ALKawser
                   </span>
                   <span className="block text-xs text-slate-500 uppercase tracking-widest font-semibold mt-0.5">
-                    CEO & Chief AI Architect
+                    Founder & Chief AI Architect ByteLabs
                   </span>
                 </div>
               </div>

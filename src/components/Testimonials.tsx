@@ -122,8 +122,8 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-[#070a13] text-white relative overflow-hidden flex items-center justify-center min-h-[90vh]">
-      
+    <section className="py-24 bg-slate-950 text-slate-100 relative overflow-hidden font-sans selection:bg-purple-500/30text-white relative overflow-hidden flex items-center justify-center min-h-[90vh]">
+      zzzz
       {/* Background Infinity Scrolling Text */}
       <div className="absolute top-1/2 left-0 w-full overflow-hidden select-none pointer-events-none opacity-[0.02] transform -translate-y-1/2 -rotate-12 z-0 hidden md:block">
         <motion.div 
