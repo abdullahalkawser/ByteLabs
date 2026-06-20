@@ -82,7 +82,7 @@ const Header = () => {
             <div className="flex-shrink-0 flex items-center gap-2 md:gap-3 group cursor-pointer">
               <Cpu className="w-6 h-6 md:w-7 md:h-7 text-cyan-400 drop-shadow-[0_0_10px_rgba(6,182,212,0.6)] group-hover:rotate-180 transition-transform duration-500" />
               <div className="text-xl sm:text-2xl md:text-3xl font-black bg-gradient-to-r from-white via-cyan-100 to-cyan-400 bg-clip-text text-transparent tracking-wide">
-                ByteLabs
+                BytesLab
               </div>
             </div>
 
@@ -201,7 +201,7 @@ const Header = () => {
               {/* সিস্টেম ট্যাগ */}
               <div className="flex items-center gap-2 pb-3 mb-5 sm:mb-6 border-b border-gray-900 text-[10px] sm:text-xs font-mono tracking-wider text-gray-500 flex-shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                <span>ByteLabs Mainframe System v2.5</span>
+                <span>BytesLab Mainframe System v2.5</span>
               </div>
 
               {/* স্ক্রোলযোগ্য মূল কন্টেন্ট এরিয়া */}

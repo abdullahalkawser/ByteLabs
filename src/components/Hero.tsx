@@ -192,7 +192,7 @@ const HeroSection = () => {
           transition={{ type: "spring", damping: 12, stiffness: 60 }}
           className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight max-w-6xl leading-[0.95] text-white"
         >
-          ByteLabs <br />
+          BytesLab <br />
           <span className="bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_60px_rgba(168,85,247,0.3)]">
             Tech Solutions
           </span>
