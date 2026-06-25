@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 
 const AICanvasBackground = () => {
   const canvasRef = useRef(null);
+  
   const mouse = useRef({ x: null, y: null });
 
   useEffect(() => {
